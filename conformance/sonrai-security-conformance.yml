@@ -1,0 +1,30 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  Derived from the Auth0 OIDC discovery document at
+  login.sonraisecurity.com/.well-known/openid-configuration and the observed
+  authorize/login flow. No published compliance-certification page (SOC 2 /
+  ISO 27001 / trust center) was found on a public probe, so no Compliance
+  assertion is made here.
+standards:
+  - id: openid-connect
+    conforms: true
+    evidence: >-
+      /.well-known/openid-configuration published with issuer, authorization,
+      token, userinfo, jwks endpoints and standard OIDC scopes (Auth0 IdP).
+  - id: oauth2
+    conforms: true
+    evidence: >-
+      OAuth 2.0 authorization-server metadata published
+      (/.well-known/oauth-authorization-server); authorization_code + PKCE
+      (S256), device_code, and client_credentials grants supported.
+  - id: pkce-rfc7636
+    conforms: true
+    evidence: code_challenge_methods_supported includes S256
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: no public API spec available to confirm application/problem+json
+  - id: fapi
+    conforms: false
+  - id: scim
+    conforms: false

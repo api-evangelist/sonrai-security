@@ -1,0 +1,59 @@
+generated: '2026-07-21'
+method: searched
+source: live probes of Sonrai marketing, app, and Auth0 login hosts
+notes: >-
+  The marketing host (sonraisecurity.com) and the application host
+  (app.sonraisecurity.com) return an HTML soft-404 (content-type text/html, full
+  WordPress/SPA page) for every /.well-known/ path probed, so none of those are
+  real discovery documents. The real OpenID Connect / OAuth 2.0 discovery
+  surface lives on the Auth0-backed identity provider at login.sonraisecurity.com
+  and is captured verbatim below.
+hosts:
+  - host: https://login.sonraisecurity.com
+    documents:
+      - path: /.well-known/openid-configuration
+        status: 200
+        content_type: application/json
+        file: sonrai-security-openid-configuration.json
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        content_type: application/json
+        file: sonrai-security-oauth-authorization-server.json
+      - path: /.well-known/jwks.json
+        status: 200
+        content_type: application/json
+        file: null
+  - host: https://sonraisecurity.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        content_type: text/html
+        soft_404: true
+        present: false
+      - path: /.well-known/openid-configuration
+        status: 200
+        content_type: text/html
+        soft_404: true
+        present: false
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        content_type: text/html
+        soft_404: true
+        present: false
+      - path: /.well-known/api-catalog
+        status: 200
+        content_type: text/html
+        soft_404: true
+        present: false
+      - path: /.well-known/ai-plugin.json
+        status: 200
+        content_type: text/html
+        soft_404: true
+        present: false
+  - host: https://app.sonraisecurity.com
+    documents:
+      - path: /.well-known/openid-configuration
+        status: 200
+        content_type: text/html
+        soft_404: true
+        present: false

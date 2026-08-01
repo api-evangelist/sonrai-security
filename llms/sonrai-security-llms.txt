@@ -1,0 +1,37 @@
+# Sonrai Security
+
+> Sonrai Security is a cloud identity and access security company. Its Cloud
+> Permissions Firewall (CPF) enforces least-privilege access across AWS, Azure,
+> and Google Cloud by quarantining unused IAM identities, protecting sensitive
+> permissions, and disabling unused services and regions — without disrupting
+> developers. Sonrai exposes a GraphQL API for the platform; access is
+> authenticated through an Auth0-backed OpenID Connect identity provider.
+
+## APIs
+
+- [Sonrai GraphQL API](https://docs.sonraisecurity.com/cpf/api/sonrai-graphql-api): GraphQL API for the Cloud Permissions Firewall platform (endpoint https://app.sonraisecurity.com/graphql; bearer-token authenticated).
+
+## Authentication
+
+- [OpenID Connect discovery](https://login.sonraisecurity.com/.well-known/openid-configuration): Auth0-hosted OIDC identity provider (issuer https://login.sonraisecurity.com/).
+- [Authentication profile](https://raw.githubusercontent.com/api-evangelist/sonrai-security/refs/heads/main/authentication/sonrai-security-authentication.yml): OIDC + bearer-token model captured by API Evangelist.
+
+## Docs
+
+- [CPF Developer Documentation](https://docs.sonraisecurity.com/cpf-public/): Public Cloud Permissions Firewall documentation portal.
+- [Pricing](https://sonraisecurity.com/pricing/)
+- [Free trial / Sign up](https://app.sonraisecurity.com/SignUp)
+- [Login](https://app.sonraisecurity.com/Login)
+- [Blog](https://sonraisecurity.com/blog/)
+- [Privacy Policy](https://sonraisecurity.com/privacy-policy/)
+- [Terms of Service](https://sonraisecurity.com/terms-of-service/)
+
+## Products
+
+- Cloud Permissions Firewall (CPF): least-privilege enforcement across cloud IAM.
+- WALLy Cloud PAM Agent: AI-driven just-in-time privileged access via Slack and Teams.
+- Agentic AI Security Consulting.
+
+## Repositories
+
+- [GitHub organization](https://github.com/sonraisecurity): utilities and public assets (e.g. gcp-permission-mappings).

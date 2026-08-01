@@ -1,9 +1,31 @@
 aid: sonrai-security
 name: Sonrai Security
-description: Sonrai Security is a company surfaced as a portfolio company of menlo-ventures and added
-  to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: >-
+  Sonrai Security is a cloud identity and access security company whose Cloud
+  Permissions Firewall (CPF) enforces least-privilege access across AWS, Azure,
+  and Google Cloud by quarantining unused IAM identities, protecting sensitive
+  permissions, and disabling unused services and regions without disrupting
+  developers. The platform also ships WALLy, an AI-driven Cloud PAM agent that
+  grants just-in-time privileged access through Slack and Teams, and offers
+  agentic AI security consulting. Sonrai exposes a GraphQL API for the platform
+  (endpoint https://app.sonraisecurity.com/graphql), documented in its CPF
+  developer docs; platform and API access authenticate through an Auth0-backed
+  OpenID Connect identity provider at login.sonraisecurity.com. Sonrai Security
+  is backed by Menlo Ventures.
 url: https://raw.githubusercontent.com/api-evangelist/sonrai-security/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://sonraisecurity.com/wp-content/uploads/sonrai-logo-sharing.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
@@ -12,10 +34,30 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
-apis: []
+- Security
+- Cloud Security
+- Identity and Access Management
+- CIEM
+- Cloud Permissions
+- Least Privilege
+- GraphQL
+- IAM
+apis:
+- name: Sonrai GraphQL API
+  description: >-
+    GraphQL API for the Sonrai Cloud Permissions Firewall platform — exempt,
+    protect, quarantine, and disable cloud IAM access. Bearer-token
+    authenticated; reference documentation is gated behind the Auth0 login.
+  humanURL: https://docs.sonraisecurity.com/cpf/api/sonrai-graphql-api
+  baseURL: https://app.sonraisecurity.com/graphql
+  properties:
+  - type: GraphQL
+    url: https://docs.sonraisecurity.com/cpf/api/sonrai-graphql-api
+  - type: APIReference
+    url: https://docs.sonraisecurity.com/cpf/api/sonrai-graphql-api
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -24,3 +66,38 @@ maintainers:
 common:
 - type: Website
   url: https://sonraisecurity.com
+- type: DeveloperPortal
+  url: https://docs.sonraisecurity.com/cpf-public/
+- type: Documentation
+  url: https://docs.sonraisecurity.com/cpf-public/
+- type: Pricing
+  url: https://sonraisecurity.com/pricing/
+- type: SignUp
+  url: https://app.sonraisecurity.com/SignUp
+- type: Login
+  url: https://app.sonraisecurity.com/Login
+- type: Blog
+  url: https://sonraisecurity.com/blog/
+- type: Support
+  url: https://sonraisecurity.com/contact/
+- type: PrivacyPolicy
+  url: https://sonraisecurity.com/privacy-policy/
+- type: TermsOfService
+  url: https://sonraisecurity.com/terms-of-service/
+- type: GitHubOrganization
+  url: https://github.com/sonraisecurity
+- type: Authentication
+  url: authentication/sonrai-security-authentication.yml
+- type: Conformance
+  url: conformance/sonrai-security-conformance.yml
+- type: DomainSecurity
+  url: security/sonrai-security-domain-security.yml
+- type: WellKnown
+  url: well-known/sonrai-security-well-known.yml
+- type: LLMsTxt
+  url: llms/sonrai-security-llms.txt
+x-enrichment:
+  date: '2026-07-21'
+  status: minimal
+  artifacts_added: 7
+  pass: local-v1

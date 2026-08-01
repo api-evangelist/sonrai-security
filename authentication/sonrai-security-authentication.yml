@@ -1,0 +1,45 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  Observed Auth0 OIDC authorize/login flow on login.sonraisecurity.com,
+  its /.well-known/openid-configuration, and the Sonrai CPF GraphQL API docs
+  (docs.sonraisecurity.com/cpf/api/sonrai-graphql-api). Detailed API-token docs
+  sit behind login in the gated /cpf developer section.
+docs: https://docs.sonraisecurity.com/cpf/api/sonrai-graphql-api
+summary:
+  types: [oauth2, openIdConnect, http]
+  api_key_in: []
+  oauth2_flows: [authorizationCode, deviceCode, clientCredentials]
+  notes: >-
+    Interactive access to the Sonrai platform and its docs authenticates through
+    an Auth0-hosted OpenID Connect identity provider. The GraphQL API is called
+    with a bearer token over HTTPS. There is no unauthenticated public API
+    surface; the GraphQL endpoint requires an authenticated token.
+schemes:
+  - name: openIdConnect
+    type: openIdConnect
+    openIdConnectUrl: https://login.sonraisecurity.com/.well-known/openid-configuration
+    issuer: https://login.sonraisecurity.com/
+    provider: Auth0
+    endpoints:
+      authorization: https://login.sonraisecurity.com/authorize
+      token: https://login.sonraisecurity.com/oauth/token
+      userinfo: https://login.sonraisecurity.com/userinfo
+      device_authorization: https://login.sonraisecurity.com/oauth/device/code
+      revocation: https://login.sonraisecurity.com/oauth/revoke
+      jwks: https://login.sonraisecurity.com/.well-known/jwks.json
+    scopes_supported:
+      - openid
+      - profile
+      - offline_access
+      - email
+    code_challenge_methods_supported: [S256, plain]
+    evidence: observed 302 to login.sonraisecurity.com/authorize with scope=openid+profile
+  - name: bearerToken
+    type: http
+    scheme: bearer
+    applies_to: Sonrai GraphQL API (https://app.sonraisecurity.com/graphql)
+    evidence: >-
+      CPF developer docs document a GraphQL API; the app.sonraisecurity.com/graphql
+      endpoint responds (405 to unauthenticated probe) and the reference is gated
+      behind the Auth0 login.
