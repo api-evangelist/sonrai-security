@@ -55,6 +55,15 @@ tags:
 - Cloud Permissions
 - Least Privilege
 - GraphQL
+tags_raw:
+- Company
+- Security
+- Cloud Security
+- Identity and Access Management
+- CIEM
+- Cloud Permissions
+- Least Privilege
+- GraphQL
 - IAM
 apis:
 - name: Sonrai GraphQL API
