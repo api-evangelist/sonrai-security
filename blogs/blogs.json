@@ -2,6 +2,20 @@
   "repo": "sonrai-security",
   "feeds": [
     {
+      "source": "https://sonraisecurity.com/blog/",
+      "feed_url": "https://sonraisecurity.com/blog/",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    },
+    {
+      "source": "https://sonraisecurity.com/feed/",
+      "feed_url": "https://sonraisecurity.com/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
       "source": "https://app.sonraisecurity.com/Login",
       "feed_url": "https://app.sonraisecurity.com/Login",
       "title": "",
@@ -10,5 +24,5 @@
     }
   ],
   "post_count": 0,
-  "fetched": "2026-10-03T12:30:02Z"
+  "fetched": "2026-10-10T13:15:00Z"
 }
